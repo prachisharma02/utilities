@@ -1,0 +1,7 @@
+npm start: To start the server
+npm build: When we need to deploy our website, we require HTML, CSS, and JS files, 
+so npm build helps in that. Npm build creates a build directory that contains all the HTML and CSS files. 
+These files can be pasted on the hosting website to host your website. In essence, when we want to 
+make our website live, we need HTML and JS files. Npm build is used for production or deployment, 
+creating a build folder. Inside this folder, there is a static folder that contains all the CSS and JS files.
+ Additionally, there is an index.html file that serves as the main home page.

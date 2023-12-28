@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>
+      Choose an ice cream flavor:
+      <select class="ice-cream" name="ice-cream">
+        <option value="">Select One …</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="sardine">Sardine</option>
+        <option value="vanilla">Vanilla</option>
+      </select>
+    </label>
+
+    <div id="result"></div>
+
+    <button id="myBtn">Try it</button>
+    <p id="demo"></p>
+    <button id="sure">are you sure</button>
+    <div id="confirm"></div>
+  </body>
+  <script>
+    // when we change the option of icecream change evenlistener will fire
+
+    document.querySelector(".ice-cream").addEventListener("change", (event) => {
+      document.getElementById(
+        "result"
+      ).innerHTML += `i love ${event.target.value}`;
+    });
+
+    // when we click on tryit button click eventlistener will fire
+    document
+      .getElementById("myBtn")
+      .addEventListener("click", function click() {
+        alert("mouse clicked");
+      });
+    document.getElementById("sure").addEventListener("click", function click() {
+      confirm("mouse clicked");
+    });
+
+    //   when we hover mouse on tryit button moseover event listener will fire
+    document
+      .getElementById("myBtn")
+      .addEventListener("mouseover", function myFunction() {
+        document.getElementById("demo").innerHTML += "Moused over!<br>";
+      });
+
+    //   some more event listener
+    element.addEventListener("load", function (event) {
+      alert("page has finished loading");
+    });
+    element.addEventListener("resize", function (event) {
+      alert("window is resized");
+    });
+    element.addEventListener("scroll", function (event) {
+      alert("document is scrolled");
+    });
+
+    //  confirm
+
+    document
+      .getElementById("myBtn")
+      .addEventListener("click", function click() {
+        alert("mouse clicked");
+      });
+
+    document
+      .getElementById("myBtn")
+      .addEventListener("click", function click() {
+        alert("sure clicked");
+      });
+  </script>
+</html>
