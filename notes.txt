@@ -5,3 +5,18 @@ These files can be pasted on the hosting website to host your website. In essenc
 make our website live, we need HTML and JS files. Npm build is used for production or deployment, 
 creating a build folder. Inside this folder, there is a static folder that contains all the CSS and JS files.
  Additionally, there is an index.html file that serves as the main home page.
+
+Vanilla javascript: it is the purest form of javascript means everything is written in an only in 
+javascript no use of other js libraries like react angular  web applications can be made of using only js as 
+well so using fundamental js is only called as vanilla javascript
+For reference : https://www.linkedin.com/pulse/vanilla-javascript-better-choice-web-development-sunil-chaudhary/
+
+Call backs
+callbacks mean that you make a call first, and in that call, you specify to wait for 3000 ms. 
+It will then move on to the next line. When the 300 ms wait is over, it will  call you again. 
+So, in essence, a basic callback means calling again; a callback involves making a call again
+
+Promises 
+
+How to add bootstrap 
+1. add javascript file from bootstrap docs in public/index.html file 
