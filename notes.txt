@@ -20,3 +20,15 @@ Promises
 
 How to add bootstrap 
 1. add javascript file from bootstrap docs in public/index.html file 
+2. add css file in head part of index.html file
+
+Props:
+1. when we want to resuse the component but with varibale value then props are used 
+it is use to pass data into components 
+example 
+we have created a nabvar in which home contact about us page we want same ui for each component 
+only heading should change so we will pass it as props ex props.title = aboutus or props.title = contact
+2. Props are read only we are passing title =contact or title= about us so we cant change it furthur the value
+of props we cant make changes by doing title+"hufh" // this is errror
+
+PropType: used to define the data type of props passed
