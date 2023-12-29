@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./index.css";
 
 import "./index.css";
+import { Link } from "react-router-dom";
 function Navbar(props) {
   let newstyle = {
     color: "white",
@@ -45,14 +46,18 @@ function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="  nav-link  bar" aria-current="page" href="/">
-                  Home
-                </a>
+                <Link
+                  className="  nav-link  bar"
+                  aria-current="page"
+                  to="/textform"
+                >
+                  TextForm
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link bar" href="/">
-                  Contact
-                </a>
+                <Link className="nav-link bar" to="/About">
+                  About
+                </Link>
               </li>
               <li className="nav-item dropdown">
                 <a

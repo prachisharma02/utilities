@@ -18,7 +18,7 @@ function Textform(props) {
     setInputText(event.target.value);
   };
   return (
-    <div>
+    <div className="container">
       <label htmlFor="floatingTextarea2" style={{ marginTop: "30px" }}>
         Comments
       </label>
