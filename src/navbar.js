@@ -16,7 +16,7 @@ function Navbar(props) {
   const [style, setStyle] = useState(mystyle);
   const [text, settext] = useState("Enable Dark Mode");
   const handledarkmode = () => {
-    if (style.color == "aliceblue") {
+    if (style.color === "aliceblue") {
       setStyle({ ...newstyle });
       settext("Enable Light Mode");
     } else {

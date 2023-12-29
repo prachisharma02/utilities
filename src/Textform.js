@@ -1,14 +1,18 @@
 import { useState } from "react";
 import React from "react";
-import nlp from "compromise";
 
-function Textform() {
+function Textform(props) {
   const [inputText, setInputText] = useState("");
-  const [correctedText, setCorrectedText] = useState("");
-  const handlegrammer = () => {
-    const doc = nlp(inputText);
-    const corrected = doc.normalize().out("text");
-    setCorrectedText(corrected);
+
+  const handleLower = () => {
+    let newtext = inputText.toLowerCase();
+    setInputText(newtext);
+    props.showalert("Converted to lowercase", "Success");
+  };
+  const handleUpper = () => {
+    let newtext = inputText.toUpperCase();
+    setInputText(newtext);
+    props.showalert("Converted to Uppercase", "Success");
   };
   const handleonchange = (event) => {
     setInputText(event.target.value);
@@ -34,13 +38,12 @@ function Textform() {
           }}
         ></textarea>
       </div>
-      <button className="btn btn-primary" onClick={handlegrammer}>
-        grammer
+      <button className="btn btn-primary mx-4" onClick={handleUpper}>
+        Upper
       </button>
-      <div>
-        <strong>Corrected Text:</strong>
-        <p>{correctedText}</p>
-      </div>
+      <button className="btn btn-primary" onClick={handleLower}>
+        lower
+      </button>
     </div>
   );
 }

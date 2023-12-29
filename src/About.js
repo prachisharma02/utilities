@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-function About() {
-  let style = {
+function About(props) {
+  let newstyle = {
     color: "white",
     backgroundColor: "black",
+  };
+  let mystyle = {
+    backgroundColor: "rgb(230, 173, 250)",
+    color: "blueviolet",
+  };
+
+  const [style, setStyle] = useState(mystyle);
+  const [text, settext] = useState("Enable Dark Mode");
+  const handledarkmode = () => {
+    if (style.color === "blueviolet") {
+      setStyle({ ...newstyle });
+      settext("Enable Light Mode");
+      props.showalert("Enabled Dark Mode", "Success");
+    } else {
+      setStyle(mystyle);
+      settext("Enable Dark Mode");
+      props.showalert("Enabled Light Mode", "Success");
+    }
   };
   return (
     <>
@@ -106,6 +124,11 @@ function About() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container">
+        <button className="btn btn-outline search" onClick={handledarkmode}>
+          {text}
+        </button>
       </div>
     </>
   );
