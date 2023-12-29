@@ -17,10 +17,12 @@ function About(props) {
       setStyle({ ...newstyle });
       settext("Enable Light Mode");
       props.showalert("Enabled Dark Mode", "Success");
+      document.title = "dark";
     } else {
       setStyle(mystyle);
       settext("Enable Dark Mode");
       props.showalert("Enabled Light Mode", "Success");
+      document.title = "light";
     }
   };
   return (
