@@ -1,0 +1,17 @@
+.navi {
+  background-color: rgb(197, 144, 247);
+  color: aliceblue;
+}
+.search {
+  background-color: blueviolet;
+  color: aliceblue;
+}
+.btn.btn-outline.search:hover {
+  background-color: #6a1296;
+  color: aliceblue;
+
+  border-color: #d46bea;
+}
+.bar {
+  color: rgb(255, 255, 255);
+}

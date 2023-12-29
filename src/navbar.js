@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "./index.css";
 
 import "./index.css";
 function Navbar(props) {
+  let newstyle = {
+    color: "white",
+    backgroundColor: "black",
+  };
+  let mystyle = {
+    backgroundColor: "rgb(197, 144, 247)",
+    color: "aliceblue",
+  };
+
+  const [style, setStyle] = useState(mystyle);
+  const [text, settext] = useState("Enable Dark Mode");
+  const handledarkmode = () => {
+    if (style.color == "aliceblue") {
+      setStyle({ ...newstyle });
+      settext("Enable Light Mode");
+    } else {
+      setStyle(mystyle);
+      settext("Enable Dark Mode");
+    }
+  };
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary nav">
+      <nav className="navbar navbar-expand-lg navi  " style={style}>
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand bar" href="/">
             {props.title}
           </a>
           <button
@@ -24,18 +45,18 @@ function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                <a className="  nav-link  bar" aria-current="page" href="/">
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <a className="nav-link bar" href="/">
                   Contact
                 </a>
               </li>
               <li className="nav-item dropdown">
                 <a
-                  className="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle bar"
                   href="/"
                   role="button"
                   data-bs-toggle="dropdown"
@@ -65,23 +86,15 @@ function Navbar(props) {
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link " aria-disabled="true">
+                <a className="nav-link bar" aria-disabled="true">
                   Disabled
                 </a>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
           </div>
+          <button className="btn btn-outline search" onClick={handledarkmode}>
+            {text}
+          </button>
         </div>
       </nav>
     </>
@@ -91,8 +104,7 @@ function Navbar(props) {
 export default Navbar;
 
 Navbar.propTypes = {
-  title: PropTypes.string,
-  isRequired,
+  title: PropTypes.string.isRequired,
 };
 Navbar.defaultProps = {
   title: "add title",
